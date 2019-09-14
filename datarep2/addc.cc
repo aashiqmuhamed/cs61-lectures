@@ -1,9 +1,8 @@
 #include <cstdio>
 #include <cstdlib>
+#include <climits>
 
-extern "C" {
-int add(int a, int b);
-}
+extern int8_t add(int8_t a, int8_t b);
 
 int main(int argc, char* argv[]) {
     if (argc <= 2) {
@@ -12,7 +11,8 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
 
-    int a = strtol(argv[1], 0, 0);
-    int b = strtol(argv[2], 0, 0);
+    int8_t a = (int8_t) strtol(argv[1], 0, 0);
+    int8_t b = (int8_t) strtol(argv[2], 0, 0);
+
     printf("%d + %d = %d\n", a, b, add(a, b));
 }
